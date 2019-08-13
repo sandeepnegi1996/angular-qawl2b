@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartService } from './cart.service';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { CartService } from './cart.service';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
+      {path: 'cart', component: CartComponent},
       { path: 'products/:productId', component: ProductDetailsComponent },
     ])
   ],
@@ -24,7 +26,8 @@ import { CartService } from './cart.service';
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService]
